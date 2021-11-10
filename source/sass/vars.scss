@@ -1,0 +1,24 @@
+$white: #ffffff;
+
+/* Text colors */
+
+/* BG colors */
+
+/*Fonts*/
+$main-f: "ptmono-regular", "Arial", "Helvetica", sans-serif;
+$accent-regular-f: "robotocondensed-regular", "Arial", "Helvetica", sans-serif;
+$accent-bold-f: "robotocondensed-bold", "Arial", "Helvetica", sans-serif;
+
+/* Font weight */
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+/* Sizes and breakpoints*/
+$phones-min: 320px;
+$phones-max: 767px;
+$tablets-min: 768px;
+$tablets-max: 1023px;
+$desktops: 1024px;
+
+/* Retina */
+$resolution2x: 2dppx;
