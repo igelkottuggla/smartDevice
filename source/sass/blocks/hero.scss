@@ -1,0 +1,97 @@
+.hero {
+  padding-top: 232px;
+  padding-bottom: 278px;
+  color: $white-text;
+  width: calc(100% + 95px);
+
+  @include tablet-mobile {
+    width: 100%;
+  }
+
+  @include media-tablet {
+    padding-top: 116px;
+    padding-bottom: 116px;
+    padding-left: 50px;
+  }
+
+  @include media-mobile {
+    padding-top: 231px;
+    padding-bottom: 70px;
+  }
+}
+
+.hero .wrapper {
+  max-width: 100%;
+}
+
+.hero__content {
+  width: 56.57%;
+  z-index: 2;
+
+  @include media-tablet {
+    width: 73.6%;
+  }
+
+  @include media-mobile {
+    width: 100%;
+  }
+}
+
+.hero__content h1 {
+  @include reset-text-slyle;
+  margin-bottom: 27px;
+  font-family: $accent-bold-f;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  z-index: 2;
+
+  @include media-tablet {
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  @include media-mobile {
+    font-size: 40px;
+    line-height: 47px;
+  }
+}
+
+.hero__content p {
+  @include reset-text-slyle;
+  position: relative;
+  margin-bottom: 45px;
+  padding-left: 97px;
+  font-size: 22px;
+  line-height: 34px;
+
+  @include media-tablet {
+    padding-left: 48px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  @include media-mobile {
+    padding-left: 50px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 66px;
+    height: 2px;
+    left: 0;
+    top: 15px;
+    background-image: url("../img/svg/hor-line.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include tablet-mobile {
+      width: 33px;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.about {
+  position: relative;
+  margin-top: 110px;
+  margin-bottom: 110px;
+  padding-left: 179px;
+  max-width: 1210px;
+
+  @include media-tablet {
+    margin-top: 59px;
+    margin-bottom: 83px;
+    padding-left: 187px;
+  }
+
+  @include media-mobile {
+    margin-top: 60px;
+    margin-bottom: 65px;
+    padding-left: 15px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "2005";
+    background: url("../img/about/bg-about@1x.png");
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 156.248px;
+    line-height: 220px;
+    transform: rotate(-90deg);
+    font-family: $accent-bold-f;
+    font-weight: $font-weight-bold;
+    left: -70px;
+    top: 45px;
+
+    @include media-tablet {
+      font-size: 178.324px;
+      line-height: 251px;
+    }
+
+    @include media-mobile {
+      display: none;
+    }
+  }
+}
+
+.about h2 {
+  @include reset-text-slyle;
+  font-size: 36px;
+  line-height: 51px;
+  font-family: $accent-regular-f;
+  font-weight: $font-weight-normal;
+  color: $grey-text;
+  margin-bottom: 18px;
+}
+
+.about p {
+  @include reset-text-slyle;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: $font-weight-normal;
+  margin-bottom: 20px;
+}

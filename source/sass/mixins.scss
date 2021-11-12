@@ -1,4 +1,3 @@
-
 @mixin media-desktop {
   @media (min-width: $desktops) {
     @content;
@@ -48,17 +47,17 @@
 
 @mixin reset-style-button {
   display: block;
-  font-family: $f-semi-bold;
-  font-weight: $font-weight-semibold;
+  font-family: $accent-bold-f;
+  font-weight: $font-weight-bold;
   text-align: center;
   border: none;
-  background-color: $primary-turquoise-bg;
   appearance: none;
   text-decoration: none;
   cursor: pointer;
-  color: $black-text;
-  font-size: 15px;
-  line-height: 21px;
+  color: $white-text;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
 }
 
 @mixin font(
@@ -75,28 +74,4 @@
 
 @mixin accent-text {
   @include font($light-f, 16px, $font-weight-light, normal);
-}
-
-@mixin big-accent-text {
-  @include font($light-f, 18px, $font-weight-light, normal);
-}
-
-@mixin hero-title {
-  @include font($f-bold, 30px, $font-weight-bold, normal);
-}
-
-@mixin placeholder-text {
-  @include font($main-f, 15px, $font-weight-normal, normal);
-}
-
-@mixin section-titles-dks {
-  @include font($f-semi-bold, 30px, $font-weight-semibold, normal);
-}
-
-@mixin section-titles-tablet-mobile {
-  @include font($f-semi-bold, 24px, $font-weight-semibold, normal);
-}
-
-@mixin plain-text {
-  @include font($main-f, 22px, $font-weight-normal, normal);
 }

@@ -1,0 +1,140 @@
+.card {
+  position: relative;
+  width: calc((100% - 60px) / 3);
+  min-height: 620px;
+  margin-bottom: 30px;
+
+  @include tablet-mobile {
+    min-height: 256px;
+    width: 100%;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 63px;
+    height: 63px;
+    background-color: $primary-blue-bg;
+    bottom: 0;
+    right: 0;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 8px;
+    background-image: url("../img/svg/ar-right-icon.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 27px;
+    right: 27px;
+  }
+}
+
+.card:not(:nth-of-type(3n)) {
+  margin-right: 30px;
+}
+
+.card a {
+  @include reset-style-link;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  @include tablet-mobile {
+    min-height: 256px;
+  }
+}
+
+.card h3 {
+  @include reset-text-slyle;
+  padding: 53px 0 0 43px;
+  width: 65.19%;
+  font-family: $accent-regular-f;
+  font-weight: $font-weight-normal;
+  font-size: 20px;
+  line-height: 30px;
+
+  @include media-tablet {
+    max-width: 240px;
+  }
+
+  @include media-mobile {
+    max-width: 215px;
+    width: 100%;
+  }
+}
+
+.card--circuit-board {
+  background: url("../img/services/circuit-board-dsk@1x.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include media-tablet {
+    background: url("../img/services/circuit-board-tablet@1x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @include media-mobile {
+    background: url("../img/services/circuit-board-mobile@1x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.card--installation {
+  background: url("../img/services/installation-dsk@1x.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include media-tablet {
+    background: url("../img/services/installation-tablet@1x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @include media-mobile {
+    background: url("../img/services/installation-mobile@1x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.card--components {
+  background: url("../img/services/components-dsk@1x.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include media-tablet {
+    background: url("../img/services/components-tablet@1x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @include media-mobile {
+    background: url("../img/services/components-mobile@1x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.card:hover {
+  transform: scale(1.005);
+  filter: drop-shadow(0 0 3px $primary-blue-bg);
+}
+
+.card:active {
+  transform: scale(0.98);
+  filter: invert(25%);
+}

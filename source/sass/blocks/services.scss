@@ -1,0 +1,51 @@
+.services {
+  padding-top: 93px;
+  padding-bottom: 127px;
+  background-color: $secondary-blue-bg;
+  color: $white-text;
+
+  @include media-tablet {
+    padding-top: 53px;
+    padding-bottom: 40px;
+  }
+
+  @include media-mobile {
+    padding-top: 53px;
+    padding-bottom: 30px;
+  }
+}
+
+.services .wrapper {
+  max-width: 1210px;
+}
+
+.services h2 {
+  @include reset-text-slyle;
+  margin-bottom: 47px;
+  font-family: $accent-regular-f;
+  font-weight: $font-weight-normal;
+  font-size: 36px;
+  line-height: 51px;
+
+  @include media-tablet {
+    font-size: 32px;
+    line-height: 45px;
+    max-width: 85%;
+  }
+
+  @include media-mobile {
+    font-size: 28px;
+    line-height: 39px;
+  }
+}
+
+.services__cards {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+
+  @include tablet-mobile {
+    flex-direction: column;
+  }
+}

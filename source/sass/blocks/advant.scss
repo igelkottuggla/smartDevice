@@ -1,0 +1,119 @@
+.advant {
+  margin-top: 109px;
+  max-width: 1210px;
+
+  @include media-tablet {
+    margin-top: 54px;
+  }
+
+  @include media-mobile {
+    margin-top: 37px;
+  }
+}
+
+.advant__list {
+  @include reset-list-slyle;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @include media-tablet {
+  }
+
+  @include media-mobile {
+    flex-direction: column;
+  }
+}
+
+.advant__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 40px 44px 49px;
+  width: calc((100% - 30px) / 2);
+  margin-bottom: 30px;
+  border: 1px solid $border-bg-color-advant;
+  border-left-color: $accent-border-bg-color;
+  border-left-width: 3px;
+  color: $blue-text;
+
+  @include media-tablet {
+    padding: 24px 21px 34px 27px;
+    width: calc((100% - 30px) / 2);
+  }
+
+  @include media-mobile {
+    padding: 25px 18px 38px 27px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto 20px;
+  }
+}
+
+.advant__item:nth-of-type(odd) {
+  margin-right: 30px;
+
+  @include media-mobile {
+    margin-right: auto;
+  }
+}
+
+.advant__item:hover {
+  background-color: $primary-blue-bg;
+  cursor: pointer;
+  color: $white-text;
+}
+
+.advant__item h3 {
+  @include reset-text-slyle;
+  margin-bottom: 15px;
+  color: $blue-text;
+  font-family: $accent-regular-f;
+  font-size: 24px;
+  line-height: 34px;
+
+  @include media-tablet {
+    margin-bottom: 21px;
+  }
+
+  @include media-mobile {
+    margin-bottom: 16px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+.advant__item:hover h3 {
+  color: $white-text;
+}
+
+.advant__item p {
+  @include reset-text-slyle;
+  color: $grey-text;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.advant__item:hover p {
+  color: $white-text;
+}
+
+.advant__item svg {
+  margin-bottom: 23px;
+  fill: $primary-blue-bg;
+
+  @include media-tablet {
+    margin-bottom: 10px;
+  }
+
+  @include media-mobile {
+    margin-bottom: 14px;
+  }
+}
+.advant__item:hover svg {
+  fill: $primary-white-bg;
+}

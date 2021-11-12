@@ -1,8 +1,25 @@
+$currentColor: inherit;
 $white: #ffffff;
+$basic-blue: #00b2ff;
+$light-grey: #ebebeb;
+$average-grey: #666666;
+$dark-blue: #1b2d37;
+$partial-opacity-white: rgba(255, 255, 255, 0.1);
+$partial-opacity-white2: rgba(255, 255, 255, 0.7);
 
 /* Text colors */
+$white-text: $white;
+$grey-text: $average-grey;
+$blue-text: $basic-blue;
+$input-text-white: $partial-opacity-white2;
 
 /* BG colors */
+$primary-blue-bg: $basic-blue;
+$secondary-blue-bg: $dark-blue;
+$primary-white-bg: $white;
+$border-bg-color-advant: $light-grey;
+$accent-border-bg-color: $basic-blue;
+$input-bg: $partial-opacity-white;
 
 /*Fonts*/
 $main-f: "ptmono-regular", "Arial", "Helvetica", sans-serif;
