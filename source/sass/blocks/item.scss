@@ -1,0 +1,21 @@
+.item__contents {
+  @include reset-list-slyle;
+}
+
+.item__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.item__content a {
+  opacity: 0.5;
+}
+
+.item__content:hover {
+  color: $blue-text;
+}
+
+.item__content:active {
+  color: $blue-text;
+  opacity: 0.5;
+}

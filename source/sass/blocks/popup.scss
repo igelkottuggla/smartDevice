@@ -1,0 +1,74 @@
+.popup {
+  position: fixed;
+  display: block;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+}
+
+.popup__feedback-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 33px 40px 36px 40px;
+  color: $white-text;
+  margin: 0;
+  background-color: $primary-blue-bg;
+  width: 100%;
+  max-width: 490px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup__feedback-form .feedback-form__field {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.popup__feedback-form input {
+  display: flex;
+  margin-bottom: 30px;
+  padding: 14px 10px 14px 16px;
+  width: 100%;
+  border: none;
+  background-color: $input-bg;
+  color: $input-text-white;
+}
+
+.popup__feedback-form input:nth-of-type(odd) {
+  margin-right: 0;
+}
+
+.popup__feedback-form .feedback-form__details-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 43px;
+  width: 100%;
+  flex-direction: column;
+}
+
+.popup__feedback-form button {
+  margin-right: 0;
+}
+
+.popup__feedback-form label {
+  padding-left: 36px;
+  font-size: 14px;
+  line-height: 16px;
+  opacity: 0.8;
+  cursor: pointer;
+  width: 100%;
+  max-width: 340px;
+}

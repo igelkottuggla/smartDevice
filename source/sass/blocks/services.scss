@@ -1,17 +1,17 @@
 .services {
-  padding-top: 93px;
-  padding-bottom: 127px;
+  padding-top: 88px;
+  padding-bottom: 97px;
   background-color: $secondary-blue-bg;
   color: $white-text;
 
   @include media-tablet {
-    padding-top: 53px;
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 32px;
   }
 
   @include media-mobile {
-    padding-top: 53px;
-    padding-bottom: 30px;
+    padding-top: 50px;
+    padding-bottom: 34px;
   }
 }
 
@@ -21,19 +21,22 @@
 
 .services h2 {
   @include reset-text-slyle;
-  margin-bottom: 47px;
+  margin-bottom: 52px;
   font-family: $accent-regular-f;
   font-weight: $font-weight-normal;
   font-size: 36px;
   line-height: 51px;
 
   @include media-tablet {
+    margin-bottom: 49px;
     font-size: 32px;
     line-height: 45px;
     max-width: 85%;
   }
 
   @include media-mobile {
+    max-width: 275px;
+    margin: 0 auto 42px;
     font-size: 28px;
     line-height: 39px;
   }

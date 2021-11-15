@@ -3,6 +3,7 @@
     @content;
   }
 }
+
 @mixin tablet-mobile {
   @media (min-width: $phones-min) and (max-width: $tablets-max) {
     @content;
@@ -72,6 +73,18 @@
   font-style: $fontStyle;
 }
 
-@mixin accent-text {
-  @include font($light-f, 16px, $font-weight-light, normal);
+@mixin plain-text {
+  @include font($main-f, 16px, $font-weight-normal, normal);
+}
+
+@mixin small-text {
+  @include font($main-f, 15px, $font-weight-normal, normal);
+}
+
+@mixin subtitles-average {
+  @include font($accent-regular-f, 24px, $font-weight-normal, normal);
+}
+
+@mixin subtitles-small {
+  @include font($accent-regular-f, 20px, $font-weight-normal, normal);
 }

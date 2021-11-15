@@ -2,6 +2,7 @@
   @include reset-style-button;
   border-radius: 5px;
   text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
 }
 
 .button:active {
@@ -10,10 +11,13 @@
 }
 
 .button--call-me {
-  margin-left: 52px;
-  padding: 14px 25px;
+  width: 180px;
+  padding: 14px 5px;
   background-color: transparent;
   border: 1px solid $primary-white-bg;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
 
   @include tablet-mobile {
     display: none;
@@ -25,53 +29,18 @@
   border: 1px solid $primary-blue-bg;
 }
 
-.button--advisory {
-  padding: 17px 30px;
-  margin-left: 97px;
-  font-size: 16px;
-  line-height: 19px;
-  background-color: $primary-blue-bg;
-  width: 100%;
-  max-width: 407px;
-
-  @include media-tablet {
-    margin-left: 48px;
-    max-width: 379px;
-  }
-
-  @include media-mobile {
-    margin-left: 0;
-    padding: 17px 11px;
-    max-width: 360px;
-  }
-}
-
-.button--advisory span:first-of-type {
-  @include media-mobile {
-    display: none;
-  }
-}
-
-.button--advisory span:last-of-type {
-  display: none;
-
-  @include media-mobile {
-    display: inline;
-  }
-}
-
-.button--advisory:hover {
-  background-color: $primary-white-bg;
-  color: $blue-text;
-}
-
 .button--more {
   padding: 14px 13px;
-  margin-top: 30px;
+  margin-top: 40px;
   background-color: transparent;
   color: $blue-text;
   border: 1px solid $primary-blue-bg;
   width: 180px;
+  transition: all 0.2s ease-in-out;
+
+  @include media-mobile {
+    margin-top: -11px;
+  }
 }
 
 .button--more:hover {
@@ -85,9 +54,130 @@
   background-color: transparent;
   border: 1px solid $primary-white-bg;
   flex-grow: 1;
+  transition: all 0.2s ease-in-out;
 }
 
 .button--contact:hover {
   background-color: $primary-white-bg;
   color: $blue-text;
+}
+
+.button--send {
+  padding: 14px 10px;
+  background-color: transparent;
+  border: 1px solid $primary-white-bg;
+  flex-grow: 1;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  margin-bottom: 34px;
+}
+
+.button--send:hover {
+  background-color: $primary-white-bg;
+  color: $blue-text;
+}
+
+.button--close {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 16px;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  background-image: url("../img/svg/cross-icon.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.button--close:hover {
+  animation: jello 0.8s both;
+}
+
+.button--close:active {
+  transform: scale(0.8);
+  opacity: 0.5;
+}
+
+.button--toggle {
+  display: none;
+
+  @include media-mobile {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    background-image: url("../img/svg/plus-icon.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.opened.button--toggle {
+  @include media-mobile {
+    background-image: url("../img/svg/minus-icon.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.button--toggle:hover {
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+.button--toggle:active {
+  transform: scale(0.8);
+  opacity: 0.8;
+}
+
+@keyframes jello {
+  0% {
+    transform: skew(0deg 0deg) scale(1);
+  }
+
+  30% {
+    transform: skew(25deg 25deg) scale(1.4);
+  }
+
+  40% {
+    transform: skew(-15deg, -15deg) scale(1.1);
+  }
+
+  50% {
+    transform: skew(15deg, 15deg) scale(1.5);
+  }
+
+  65% {
+    transform: skew(-5deg, -5deg) scale(1.2);
+  }
+
+  75% {
+    transform: skew(5deg, 5deg) scale(1.4);
+  }
+
+  100% {
+    transform: skew(0deg 0deg) scale(1);
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1.1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

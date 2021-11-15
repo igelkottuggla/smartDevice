@@ -1,8 +1,9 @@
 .hero {
   padding-top: 232px;
-  padding-bottom: 278px;
+  padding-bottom: 276px;
   color: $white-text;
-  width: calc(100% + 95px);
+  width: 100%;
+  z-index: 2;
 
   @include tablet-mobile {
     width: 100%;
@@ -10,34 +11,35 @@
 
   @include media-tablet {
     padding-top: 116px;
-    padding-bottom: 116px;
-    padding-left: 50px;
+    padding-bottom: 164px;
   }
 
   @include media-mobile {
     padding-top: 231px;
-    padding-bottom: 70px;
+    padding-bottom: 72px;
   }
 }
 
 .hero .wrapper {
-  max-width: 100%;
-}
+  width: 100%;
+  padding: 0;
+  max-width: 1420px;
 
-.hero__content {
-  width: 56.57%;
-  z-index: 2;
-
-  @include media-tablet {
-    width: 73.6%;
+  @include tablet-mobile {
+    max-width: 100%;
+    margin-right: auto;
+    width: 82.6%;
   }
 
   @include media-mobile {
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
+    max-width: 360px;
   }
 }
 
-.hero__content h1 {
+.hero h1 {
   @include reset-text-slyle;
   margin-bottom: 27px;
   font-family: $accent-bold-f;
@@ -45,34 +47,40 @@
   line-height: 94px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  z-index: 2;
 
   @include media-tablet {
     font-size: 60px;
     line-height: 70px;
+    margin-bottom: 29px;
+    max-width: 470px;
   }
 
   @include media-mobile {
+    margin-bottom: 25px;
     font-size: 40px;
     line-height: 47px;
   }
 }
 
-.hero__content p {
+.hero p {
   @include reset-text-slyle;
   position: relative;
-  margin-bottom: 45px;
-  padding-left: 97px;
+  margin-bottom: 44px;
+  max-width: 797px;
+  padding-left: 99px;
   font-size: 22px;
   line-height: 34px;
 
   @include media-tablet {
-    padding-left: 48px;
+    margin-bottom: 56px;
+    padding-left: 50px;
     font-size: 18px;
     line-height: 28px;
+    max-width: 470px;
   }
 
   @include media-mobile {
+    margin-bottom: 40px;
     padding-left: 50px;
     font-size: 16px;
     line-height: 25px;
@@ -83,7 +91,7 @@
     content: "";
     width: 66px;
     height: 2px;
-    left: 0;
+    left: 5px;
     top: 15px;
     background-image: url("../img/svg/hor-line.svg");
     background-size: cover;
@@ -94,4 +102,48 @@
       width: 33px;
     }
   }
+}
+
+.hero a {
+  @include reset-style-button;
+  border-radius: 5px;
+  text-transform: uppercase;
+  padding: 17px 30px;
+  margin-left: 97px;
+  font-size: 16px;
+  line-height: 19px;
+  background-color: $primary-blue-bg;
+  width: 100%;
+  max-width: 410px;
+  transition: all 0.2s ease-in-out;
+
+  @include media-tablet {
+    margin-left: 52px;
+    max-width: 379px;
+  }
+
+  @include media-mobile {
+    margin-left: 0;
+    padding: 17px 11px;
+    max-width: 360px;
+  }
+}
+
+.hero span:first-of-type {
+  @include media-mobile {
+    display: none;
+  }
+}
+
+.hero span:last-of-type {
+  display: none;
+
+  @include media-mobile {
+    display: inline;
+  }
+}
+
+.hero a:hover {
+  background-color: $primary-white-bg;
+  color: $blue-text;
 }

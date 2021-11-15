@@ -1,13 +1,13 @@
-.feedback-form {
+.feedback .feedback-form {
   margin-left: auto;
-  width: 50%;
+  width: 48.99%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 
   @include media-tablet {
-    width: 76.95%;
+    width: 81.95%;
     margin: 0 auto;
   }
 
@@ -18,18 +18,34 @@
 
 .feedback-form h3 {
   @include reset-text-slyle;
-  margin-bottom: 7px;
+  margin-bottom: 8px;
   font-family: $accent-regular-f;
   font-weight: $font-weight-normal;
   font-size: 36px;
   line-height: 51px;
+
+  @include media-tablet {
+    margin-bottom: 17px;
+    font-size: 32px;
+    line-height: 140.62%;
+  }
+
+  @include media-mobile {
+    margin-bottom: 13px;
+    font-size: 28px;
+    line-height: 39px;
+  }
 }
 
 .feedback-form p {
   @include reset-text-slyle;
-  margin-bottom: 49px;
-  font-size: 16px;
+  @include plain-text;
   line-height: 22px;
+  margin-bottom: 52px;
+
+  @include media-mobile {
+    margin-bottom: 25px;
+  }
 }
 
 .feedback-form__field {
@@ -44,34 +60,39 @@
 }
 
 .feedback-form input {
+  @include plain-text;
+  line-height: 22px;
   display: flex;
   margin-bottom: 41px;
-  padding: 14px 10px 14px 16px;
+  padding: 13px 10px 14px 18px;
   width: calc((100% - 31px) / 2);
   border: none;
   background-color: $input-bg;
-  font-size: 16px;
-  line-height: 22px;
-  font-family: $main-f;
-  font-weight: $font-weight-normal;
   color: $input-text-white;
 
+  @include media-tablet {
+    padding: 15px 10px 15px 18px;
+  }
+
   @include media-mobile {
+    padding: 15px 10px 15px 18px;
     width: 100%;
     margin: 0 auto 30px;
   }
 }
 
 .feedback-form input::placeholder {
-  font-size: 16px;
+  @include plain-text;
   line-height: 22px;
-  font-family: $main-f;
-  font-weight: $font-weight-normal;
   color: $white-text;
 }
 
 .feedback-form input:nth-of-type(odd) {
   margin-right: 31px;
+
+  @include media-mobile {
+    margin-right: auto;
+  }
 }
 
 .feedback-form__field--comment {
@@ -79,6 +100,8 @@
 }
 
 .feedback-form__field--comment textarea {
+  @include plain-text;
+  line-height: 22px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -87,18 +110,20 @@
   min-height: 154px;
   border: none;
   background-color: $input-bg;
-  font-size: 16px;
-  line-height: 22px;
-  font-family: $main-f;
-  font-weight: $font-weight-normal;
   color: $input-text-white;
+
+  @include media-tablet {
+    min-height: 160px;
+  }
+
+  @include media-mobile {
+    min-height: 104px;
+  }
 }
 
 .feedback-form__field--comment textarea::placeholder {
-  font-size: 16px;
+  @include plain-text;
   line-height: 22px;
-  font-family: $main-f;
-  font-weight: $font-weight-normal;
   color: $white-text;
 }
 
@@ -106,16 +131,21 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 43px;
+  margin-top: 44px;
   width: 100%;
+
+  @include media-tablet {
+    margin-top: 47px;
+  }
 
   @include media-mobile {
     flex-direction: column;
+    margin-top: 32px;
   }
 }
 
 .feedback-form__button {
-  width: calc((100% - 38px) / 2);
+  width: calc((100% - 15px) / 2);
   margin-left: 0;
   margin-right: 38px;
 
@@ -128,12 +158,16 @@
 
 .feedback-form__details-wrap label {
   position: relative;
-  padding-left: 36px;
+  padding-left: 32px;
   width: calc((100% - 38px) / 2);
   font-size: 14px;
   line-height: 16px;
   opacity: 0.8;
   cursor: pointer;
+
+  @include media-tablet {
+    padding-left: 36px;
+  }
 
   @include media-mobile {
     width: 100%;
@@ -147,8 +181,13 @@
   content: "";
   width: 16px;
   height: 16px;
-  border: 1px solid #ffffff;
+  border: 1px solid $primary-white-bg;
   left: 0;
+  top: 0;
+
+  @include media-tablet {
+    left: 3px;
+  }
 }
 
 .feedback-form__details-wrap input:checked ~ label::before {

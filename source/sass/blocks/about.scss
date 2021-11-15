@@ -1,39 +1,45 @@
 .about {
   position: relative;
-  margin-top: 110px;
-  margin-bottom: 110px;
-  padding-left: 179px;
+  margin-top: 95px;
+  margin-bottom: 109px;
+  padding-left: 200px;
   max-width: 1210px;
 
   @include media-tablet {
-    margin-top: 59px;
+    margin-top: 40px;
     margin-bottom: 83px;
-    padding-left: 187px;
+    padding-left: 210px;
   }
 
   @include media-mobile {
-    margin-top: 60px;
+    margin-top: 44px;
     margin-bottom: 65px;
     padding-left: 15px;
+    max-width: 360px;
   }
 
   &::before {
     position: absolute;
     content: "2005";
-    background: url("../img/about/bg-about@1x.png");
+    background: url("../img/about/bg-about@1x.png") $primary-blue-bg;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 156.248px;
+    font-size: 156px;
     line-height: 220px;
     transform: rotate(-90deg);
     font-family: $accent-bold-f;
     font-weight: $font-weight-bold;
-    left: -70px;
-    top: 45px;
+    left: -77px;
+    top: 54px;
+
+    @include retina {
+      background-image: url("../img/about/bg-about@2x.png");
+    }
 
     @include media-tablet {
-      font-size: 178.324px;
+      font-size: 178px;
       line-height: 251px;
+      left: -85px;
     }
 
     @include media-mobile {
@@ -49,7 +55,18 @@
   font-family: $accent-regular-f;
   font-weight: $font-weight-normal;
   color: $grey-text;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+
+  @include media-tablet {
+    margin-bottom: 26px;
+    font-size: 32px;
+    line-height: 140.62%;
+  }
+
+  @include media-mobile {
+    font-size: 28px;
+    line-height: 39px;
+  }
 }
 
 .about p {
@@ -58,4 +75,43 @@
   line-height: 22px;
   font-weight: $font-weight-normal;
   margin-bottom: 20px;
+  max-width: 984px;
+
+  @include media-mobile {
+    margin-bottom: 39px;
+  }
+}
+
+.about p:not(:first-of-type) {
+  @include media-tablet {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 90px;
+  }
+
+  @include media-mobile {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 175px;
+  }
+}
+
+.about p:not(:first-of-type) {
+  @include media-tablet {
+    &::after {
+      position: absolute;
+      content: "..";
+      right: 20px;
+      bottom: 88px;
+    }
+  }
+
+  @include media-mobile {
+    &::after {
+      position: absolute;
+      content: "..";
+      right: 20px;
+      bottom: 72px;
+    }
+  }
 }

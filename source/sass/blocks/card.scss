@@ -3,10 +3,16 @@
   width: calc((100% - 60px) / 3);
   min-height: 620px;
   margin-bottom: 30px;
+  transition: all 0.2s;
+  background-color: $cover-grey-bg;
 
   @include tablet-mobile {
     min-height: 256px;
     width: 100%;
+  }
+
+  @include media-tablet {
+    margin-bottom: 46px;
   }
 
   &::before {
@@ -22,7 +28,7 @@
   &::after {
     position: absolute;
     content: "";
-    width: 4px;
+    width: 5px;
     height: 8px;
     background-image: url("../img/svg/ar-right-icon.svg");
     background-repeat: no-repeat;
@@ -34,6 +40,11 @@
 
 .card:not(:nth-of-type(3n)) {
   margin-right: 30px;
+
+  @include tablet-mobile {
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .card a {
@@ -49,88 +60,274 @@
 
 .card h3 {
   @include reset-text-slyle;
-  padding: 53px 0 0 43px;
-  width: 65.19%;
-  font-family: $accent-regular-f;
-  font-weight: $font-weight-normal;
-  font-size: 20px;
+  @include subtitles-small;
   line-height: 30px;
+  padding: 50px 20px 0 43px;
+  width: 65.19%;
 
   @include media-tablet {
+    padding: 40px 20px 0 45px;
     max-width: 240px;
   }
 
   @include media-mobile {
+    padding: 20px 20px 0 34px;
     max-width: 215px;
     width: 100%;
   }
 }
 
-.card--circuit-board {
-  background: url("../img/services/circuit-board-dsk@1x.png");
+.no-webp .card--circuit-board {
+  background-image: url("../img/services/circuit-board-dsk@1x.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  @include media-tablet {
-    background: url("../img/services/circuit-board-tablet@1x.png");
+  @include retina {
+    background-image: url("../img/services/circuit-board-dsk@2x.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  @include media-mobile {
-    background: url("../img/services/circuit-board-mobile@1x.png");
+  @include media-tablet {
+    background-image: url("../img/services/circuit-board-tablet@1x.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/services/circuit-board-tablet@2x.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include media-mobile {
+    background-image: url("../img/services/circuit-board-mobile@1x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/services/circuit-board-mobile@2x.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 }
 
-.card--installation {
-  background: url("../img/services/installation-dsk@1x.png");
+.webp .card--circuit-board {
+  background-image: url("../img/services/circuit-board-dsk@1x.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  @include media-tablet {
-    background: url("../img/services/installation-tablet@1x.png");
+  @include retina {
+    background-image: url("../img/services/circuit-board-dsk@2x.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  @include media-mobile {
-    background: url("../img/services/installation-mobile@1x.png");
+  @include media-tablet {
+    background-image: url("../img/services/circuit-board-tablet@1x.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/services/circuit-board-tablet@2x.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include media-mobile {
+    background-image: url("../img/services/circuit-board-mobile@1x.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/services/circuit-board-mobile@2x.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 }
 
-.card--components {
-  background: url("../img/services/components-dsk@1x.png");
+.no-webp .card--installation {
+  background-image: url("../img/services/installation-dsk@1x.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  @include media-tablet {
-    background: url("../img/services/components-tablet@1x.png");
+  @include retina {
+    background-image: url("../img/services/installation-dsk@2x.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  @include media-mobile {
-    background: url("../img/services/components-mobile@1x.png");
+  @include media-tablet {
+    background-image: url("../img/services/installation-tablet@1x.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/services/installation-tablet@2x.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include media-mobile {
+    background-image: url("../img/services/installation-mobile@1x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/services/installation-mobile@2x.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+.webp .card--installation {
+  background-image: url("../img/services/installation-dsk@1x.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include retina {
+    background-image: url("../img/services/installation-dsk@2x.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @include media-tablet {
+    background-image: url("../img/services/installation-tablet@1x.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/services/installation-tablet@2x.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include media-mobile {
+    background-image: url("../img/services/installation-mobile@1x.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/services/installation-mobile@2x.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.no-webp .card--components {
+  background-image: url("../img/services/components-dsk@1x.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include retina {
+    background-image: url("../img/services/components-dsk@2x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @include media-tablet {
+    background-image: url("../img/services/components-tablet@1x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/services/components-tablet@2x.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include media-mobile {
+    background-image: url("../img/services/components-mobile@1x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/services/components-mobile@2x.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+.webp .card--components {
+  background-image: url("../img/services/components-dsk@1x.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include retina {
+    background-image: url("../img/services/components-dsk@2x.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @include media-tablet {
+    background-image: url("../img/services/components-tablet@1x.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/services/components-tablet@2x.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include media-mobile {
+    background-image: url("../img/services/components-mobile@1x.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/services/components-mobile@2x.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 }
 
 .card:hover {
-  transform: scale(1.005);
   filter: drop-shadow(0 0 3px $primary-blue-bg);
 }
 

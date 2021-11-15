@@ -1,0 +1,19 @@
+.nav__list {
+  @include reset-list-slyle;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 75px;
+  row-gap: 10px;
+
+  @include tablet-mobile {
+    display: flex;
+    flex-direction: column;
+    padding-right: 30px;
+    column-gap: 0;
+    row-gap: 0;
+  }
+}
+
+.nav__item a {
+  @include reset-style-link;
+}

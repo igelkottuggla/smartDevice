@@ -1,16 +1,16 @@
 .feedback {
-  padding-top: 96px;
-  padding-bottom: 114px;
+  padding-top: 91px;
+  padding-bottom: 112px;
   background-color: $primary-blue-bg;
   color: $white-text;
 
   @include media-tablet {
-    padding-top: 83px;
+    padding-top: 80px;
     padding-bottom: 103px;
   }
 
   @include media-mobile {
-    padding-top: 33px;
+    padding-top: 30px;
     padding-bottom: 41px;
   }
 }
@@ -18,18 +18,26 @@
 .feedback .wrapper {
   position: relative;
   max-width: 1210px;
+  height: 100%;
 
   &::before {
     position: absolute;
     content: "";
-    top: -150px;
-    left: -150px;
+    top: -151px;
+    left: -181px;
     width: 686px;
     height: 641px;
     background-image: url("../img/feedback/paper_airplane@1x.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/feedback/paper_airplane@2x.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 
     @include tablet-mobile {
       display: none;
@@ -39,4 +47,8 @@
 
 .feedback h2 {
   @include reset-text-slyle;
+}
+
+.feedback button {
+  margin-left: 0;
 }
