@@ -97,43 +97,44 @@
       background-repeat: no-repeat;
     }
   }
+}
 
-  &::before {
-    background-image: url("../img/hero/hero-main@1x.png");
+.no-webp .header::before {
+  background-image: url("../img/hero/hero-main@1x.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include retina {
+    background-image: url("../img/hero/hero-main@2x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @include media-tablet {
+    background-image: url("../img/hero/hero-main-tablet@1x.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
     @include retina {
-      background-image: url("../img/hero/hero-main@2x.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-image: url("../img/hero/hero-main-tablet@2x.png");
     }
+  }
 
-    @include media-tablet {
-      background-image: url("../img/hero/hero-main-tablet@1x.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+  @include media-mobile {
+    background-image: url("../img/hero/hero-main-mobile@1x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-      @include media-mobile {
-        background-image: url("../img/hero/hero-main-tablet@2x.png");
-      }
-    }
-
-    @include media-mobile {
-      background-image: url("../img/hero/hero-main-mobile@1x.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
-      @include media-mobile {
-        background-image: url("../img/hero/hero-main-mobile@2x.png");
-      }
+    @include retina {
+      background-image: url("../img/hero/hero-main-mobile@2x.png");
     }
   }
 }
+
 .webp .header {
   background-image: url("../img/hero/hero-bg-dsk@1x.webp");
 
@@ -155,46 +156,46 @@
       background-repeat: no-repeat;
     }
   }
+}
 
-  &::before {
-    background-image: url("../img/hero/hero-main@1x.webp");
+.webp .header::before {
+  background-image: url("../img/hero/hero-main@1x.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include retina {
+    background-image: url("../img/hero/hero-main@2x.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @include media-tablet {
+    background-image: url("../img/hero/hero-main-tablet@1x.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
     @include retina {
-      background-image: url("../img/hero/hero-main@2x.webp");
+      background-image: url("../img/hero/hero-main-tablet@2x.webp");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
+  }
 
-    @include media-tablet {
-      background-image: url("../img/hero/hero-main-tablet@1x.webp");
+  @include media-mobile {
+    background-image: url("../img/hero/hero-main-mobile@1x.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include retina {
+      background-image: url("../img/hero/hero-main-mobile@2x.webp");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-
-      @include retina {
-        background-image: url("../img/hero/hero-main-tablet@2x.webp");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-    }
-
-    @include media-mobile {
-      background-image: url("../img/hero/hero-main-mobile@1x.webp");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
-      @include retina {
-        background-image: url("../img/hero/hero-main-mobile@2x.webp");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
     }
   }
 }

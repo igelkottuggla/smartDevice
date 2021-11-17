@@ -87,17 +87,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     height: 90px;
-  }
 
-  @include media-mobile {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 175px;
-  }
-}
-
-.about p:not(:first-of-type) {
-  @include media-tablet {
     &::after {
       position: absolute;
       content: "..";
@@ -107,6 +97,10 @@
   }
 
   @include media-mobile {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 175px;
+
     &::after {
       position: absolute;
       content: "..";
