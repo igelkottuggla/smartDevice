@@ -19,8 +19,10 @@
   }
 
   @include media-mobile {
-    margin-top: 27px;
+    margin: 27px auto 0;
     padding-top: 29px;
+    width: 100%;
+    max-width: 360px;
   }
 
   &::before {
@@ -29,7 +31,7 @@
     opacity: 0.2;
     width: 100vw;
     height: 1px;
-    left: -300px;
+    left: calc(-50vw + 50%);
     top: 0;
     background-color: $grey-bg;
   }

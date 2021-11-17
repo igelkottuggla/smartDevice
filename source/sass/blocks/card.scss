@@ -15,6 +15,13 @@
     margin-bottom: 46px;
   }
 
+  @include media-mobile {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 360px;
+  }
+
   &::before {
     position: absolute;
     content: "";
@@ -62,16 +69,16 @@
   @include reset-text-slyle;
   @include subtitles-small;
   line-height: 30px;
-  padding: 50px 20px 0 43px;
+  padding: 50px 20px 10px 43px;
   width: 65.19%;
 
   @include media-tablet {
-    padding: 40px 20px 0 45px;
+    padding: 40px 20px 5px 45px;
     max-width: 240px;
   }
 
   @include media-mobile {
-    padding: 20px 20px 0 34px;
+    padding: 20px 20px 5px 34px;
     max-width: 215px;
     width: 100%;
   }

@@ -1,14 +1,14 @@
 .about {
   position: relative;
-  margin-top: 95px;
+  margin-top: 75px;
   margin-bottom: 109px;
   padding-left: 200px;
   max-width: 1210px;
 
   @include media-tablet {
-    margin-top: 40px;
+    margin-top: 25px;
     margin-bottom: 83px;
-    padding-left: 210px;
+    padding-left: 212px;
   }
 
   @include media-mobile {
@@ -58,7 +58,7 @@
   margin-bottom: 20px;
 
   @include media-tablet {
-    margin-bottom: 26px;
+    margin-bottom: 25px;
     font-size: 32px;
     line-height: 140.62%;
   }

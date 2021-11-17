@@ -34,13 +34,21 @@
     width: 260px;
     height: 260px;
     right: -345px;
-    bottom: 30px;
+    bottom: 50px;
     background-image: url("../img/svg/triangle-right.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 
-    @include tablet-mobile {
+    @include media-tablet {
+      width: 636px;
+      height: 640px;
+      bottom: -151px;
+      right: -315px;
+      z-index: -1;
+    }
+
+    @include media-mobile {
       display: none;
     }
   }
@@ -75,11 +83,13 @@
   color: $blue-text;
   background-color: $primary-white-bg;
   transition: all 0.3s;
+  min-height: 299px;
 
   @include media-tablet {
     margin-bottom: 30px;
     padding: 24px 20px 20px 24px;
     width: calc((100% - 30px) / 2);
+    min-height: 232px;
   }
 
   @include media-mobile {
