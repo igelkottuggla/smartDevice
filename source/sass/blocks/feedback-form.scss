@@ -59,6 +59,12 @@
   }
 }
 
+.feedback-form__field p {
+  @include reset-text-slyle;
+  margin: 5px auto;
+  color: $error;
+}
+
 .feedback-form input {
   @include plain-text;
   line-height: 22px;
@@ -111,6 +117,7 @@
   border: none;
   background-color: $input-bg;
   color: $input-text-white;
+  resize: none;
 
   @include media-tablet {
     min-height: 160px;

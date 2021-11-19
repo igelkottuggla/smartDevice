@@ -1,11 +1,11 @@
 (function () {
   const phoneInputs = document.querySelectorAll('[data-phone-pattern]');
+  const errorText = document.querySelector('.feedback-form__field p');
   if (phoneInputs) {
     document.addEventListener('DOMContentLoaded', function () {
       const eventCalllback = (event) => {
         const el = event.target;
 
-        const clearVal = el.dataset.phoneClear;
         const pattern = el.dataset.phonePattern;
         const matrixDef = '+7(___)___-__-__';
         const matrix = pattern ? pattern : matrixDef;
@@ -13,12 +13,6 @@
         const def = matrix.replace(/\D/g, '');
         let val = event.target.value.replace(/\D/g, '');
 
-        if (clearVal !== 'false' && event.type === 'blur') {
-          if (val.length < matrix.match(/([\_\d])/g).length) {
-            event.target.value = '';
-            return;
-          }
-        }
         if (def.length >= val.length) {
           val = def;
         }
@@ -40,6 +34,17 @@
       phoneInputs.forEach((input) => {
         input.addEventListener('focus', (event) => {
           event.target.value = '+7(';
+        });
+      });
+
+      phoneInputs.forEach((input) => {
+        input.addEventListener('keyup', (event) => {
+          if (event.target.value.length < 16) {
+            errorText.classList.remove('visually-hidden');
+            return;
+          } else {
+            errorText.classList.add('visually-hidden');
+          }
         });
       });
     });
@@ -69,7 +74,7 @@
 
 (function () {
   const footerEl = document.querySelector('.footer');
-  const footerBtns = document.querySelectorAll('.button--toggle');
+  const footerBtns = document.querySelectorAll('.footer__details h2');
   if (footerEl) {
     footerEl.classList.remove('footer--no-js');
 
@@ -83,10 +88,10 @@
 
             if (footerBtns[i] !== evt.target) {
               footerBtns[i].nextElementSibling.classList.remove('opened');
-              footerBtns[i].classList.remove('opened');
+              footerBtns[i].classList.remove('opened-tab');
             }
           }
-          button.classList.toggle('opened');
+          button.classList.toggle('opened-tab');
         });
       });
     }
@@ -101,6 +106,25 @@
   const popupBtn = document.querySelector('.button--send');
   const escBtn = 'Escape';
 
+  function isDescendant(ancestor, descendant) {
+    do {
+      if (descendant === ancestor) {
+        return true;
+      }
+    } while ((descendant = descendant.parentNode));
+    return false;
+  }
+
+  let tabIndexRestoreFunctions;
+
+  document
+    .querySelector('.button--close')
+    .addEventListener('click', function () {
+      tabIndexRestoreFunctions.forEach((f) => f());
+      tabIndexRestoreFunctions.forEach((f) => f());
+      tabIndexRestoreFunctions = null;
+    });
+
   const hidePopUp = () => {
     popup.classList.add('visually-hidden');
     document.body.classList.remove('overflow-hidden');
@@ -114,18 +138,37 @@
   };
 
   if (popup) {
+    let htmlAllCollection = document.all;
+
     callmeBtn.addEventListener('click', () => {
       showPopUp();
+      tabIndexRestoreFunctions = Array.prototype.filter
+        .call(
+            htmlAllCollection,
+            (descendant) =>
+              descendant.tabIndex > -1 && !isDescendant(popup, descendant)
+        )
+        .map((descendant) => {
+          var oldTabIndex = descendant.tabIndex;
+          descendant.tabIndex = -1;
+          return () => (descendant.tabIndex = oldTabIndex);
+        });
 
       document.addEventListener('click', (event) => {
         if (event.target === popup) {
           hidePopUp();
+          tabIndexRestoreFunctions.forEach((f) => f());
+          tabIndexRestoreFunctions.forEach((f) => f());
+          tabIndexRestoreFunctions = null;
         }
       });
 
       document.addEventListener('keydown', function (event) {
         if (event.key === escBtn) {
           hidePopUp();
+          tabIndexRestoreFunctions.forEach((f) => f());
+          tabIndexRestoreFunctions.forEach((f) => f());
+          tabIndexRestoreFunctions = null;
         }
       });
     });

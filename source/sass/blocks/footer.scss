@@ -95,9 +95,52 @@
 
   @include media-mobile {
     flex-direction: column;
-    max-width: 360px;
+    max-width: 550px;
     margin: 47px auto 0;
   }
+}
+
+.footer__details h2 {
+  @include media-mobile {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 0;
+      right: 0;
+      width: 16px;
+      height: 16px;
+      background-color: transparent;
+      background-image: url("../img/svg/plus-icon.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+h2.opened-tab {
+  @include media-mobile {
+    &::after {
+      background-image: url("../img/svg/minus-icon.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.footer__details h2:hover {
+  transform: scale(1.01);
+}
+
+.footer__details h2:active {
+  transform: scale(0.98);
+  opacity: 0.8;
 }
 
 .footer__nav-wrap {
@@ -132,7 +175,7 @@
   font-weight: $font-weight-normal;
   font-size: 15px;
   line-height: 16px;
-  margin-bottom: 25px;
+  margin-bottom: 27px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 
@@ -156,7 +199,6 @@
   @include media-mobile {
     position: relative;
     margin-top: 30px;
-    padding-right: 20px;
     width: 100%;
     min-width: 100%;
 
@@ -177,6 +219,12 @@
   opacity: 0.5;
 }
 
+.footer__contacts p {
+  @include media-mobile {
+    margin-bottom: 3px;
+  }
+}
+
 .footer__logo {
   margin-bottom: 53px;
   opacity: 1;
@@ -193,6 +241,9 @@
 .footer__contacts-list a {
   @include reset-style-link;
   display: block;
+  line-height: 1rem;
+  padding: 2px 0;
+  margin-bottom: 6px;
   width: 100%;
 }
 
@@ -245,5 +296,11 @@
 .opened.footer__contacts-list {
   @include media-mobile {
     display: block;
+  }
+}
+
+.footer__contacts-list p {
+  @include media-mobile {
+    padding-right: 10px;
   }
 }

@@ -95,7 +95,7 @@
   @include media-mobile {
     padding: 24px 14px 24px 22px;
     width: 100%;
-    max-width: 360px;
+    max-width: 650px;
     margin: 0 auto 20px;
     font-size: 16px;
     line-height: 22px;
@@ -113,7 +113,6 @@
 
 .advant__item:hover {
   background-color: $primary-blue-bg;
-  cursor: pointer;
   color: $white-text;
 }
 

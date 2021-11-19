@@ -1,14 +1,16 @@
 .popup {
   position: fixed;
   display: block;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   top: 0;
-  width: 100%;
-  height: 100%;
   left: 0;
   right: 0;
-  z-index: 3;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.7);
   padding: 20px;
+  z-index: 99;
 }
 
 .popup__feedback-form {
@@ -17,15 +19,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 33px 40px 36px 40px;
+  padding: 30px 40px 36px 40px;
   color: $white-text;
-  margin: 0;
+  margin: 115px auto auto;
   background-color: $primary-blue-bg;
   width: 100%;
   max-width: 490px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+}
+
+.popup h3 {
+  margin-bottom: 13px;
+  font-size: 28px;
+  line-height: 39px;
+}
+
+.popup p {
+  margin-bottom: 32px;
+  max-width: 381px;
 }
 
 .popup__feedback-form .feedback-form__field {
@@ -38,12 +48,17 @@
 
 .popup__feedback-form input {
   display: flex;
-  margin-bottom: 30px;
-  padding: 14px 10px 14px 16px;
+  margin-bottom: 31px;
+  padding: 14px 10px 14px 23px;
   width: 100%;
   border: none;
   background-color: $input-bg;
   color: $input-text-white;
+}
+
+.popup__feedback-form textarea {
+  padding: 13px 23px;
+  min-height: 104px;
 }
 
 .popup__feedback-form input:nth-of-type(odd) {
@@ -54,17 +69,18 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 43px;
+  margin-top: 32px;
   width: 100%;
   flex-direction: column;
 }
 
-.popup__feedback-form button {
+.popup__feedback-form .button--send {
   margin-right: 0;
+  margin-bottom: 35px;
 }
 
 .popup__feedback-form label {
-  padding-left: 36px;
+  padding-left: 49px;
   font-size: 14px;
   line-height: 16px;
   opacity: 0.8;

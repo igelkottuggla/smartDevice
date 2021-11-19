@@ -5,9 +5,16 @@
 .item__content {
   display: flex;
   flex-direction: column;
+  margin-bottom: 6px;
+
+  @include media-tablet {
+    margin-bottom: 5px;
+  }
 }
 
 .item__content a {
+  padding: 2px 0;
+  line-height: 1rem;
   opacity: 0.5;
 }
 

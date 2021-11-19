@@ -38,7 +38,7 @@
   justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
-  padding-top: 32px;
+  padding-top: 35px;
   max-width: unset;
 
   @include media-tablet {
@@ -52,7 +52,7 @@
 
 .header__content {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   flex-wrap: wrap;
   row-gap: 20px;
@@ -61,7 +61,7 @@
   @include tablet-mobile {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
   }
 }
@@ -79,6 +79,9 @@
 
 .no-webp .header {
   background-image: url("../img/hero/hero-bg-dsk@1x.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   @include retina {
     background-image: url("../img/hero/hero-bg-dsk@2x.png");
@@ -89,6 +92,9 @@
 
   @include media-mobile {
     background-image: url("../img/hero/hero-bg-mobile@1x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     @include retina {
       background-image: url("../img/hero/hero-bg-mobile@2x.png");
@@ -137,6 +143,9 @@
 
 .webp .header {
   background-image: url("../img/hero/hero-bg-dsk@1x.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   @include retina {
     background-color: $secondary-blue-bg;
@@ -148,6 +157,9 @@
 
   @include media-mobile {
     background-image: url("../img/hero/hero-bg-mobile@1x.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     @include retina {
       background-image: url("../img/hero/hero-bg-mobile@2x.webp");

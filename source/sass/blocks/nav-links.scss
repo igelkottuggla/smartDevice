@@ -8,8 +8,7 @@
   justify-content: end;
   column-gap: 95px;
   width: 56%;
-  margin-left: auto;
-  margin-right: 48px;
+  margin: 5px 48px 0 auto;
   color: $white-text;
 
   @include tablet-mobile {
@@ -19,6 +18,11 @@
     justify-content: flex-end;
     column-gap: unset;
     margin-right: 0;
+    margin-top: 0;
+  }
+
+  @include media-tablet {
+    margin-top: 7px;
   }
 }
 
