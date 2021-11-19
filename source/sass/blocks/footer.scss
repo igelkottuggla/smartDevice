@@ -134,13 +134,15 @@ h2.opened-tab {
   }
 }
 
-.footer__details h2:hover {
-  transform: scale(1.01);
-}
+@include media-mobile {
+  .footer__details h2:hover {
+    transform: scale(1.01);
+  }
 
-.footer__details h2:active {
-  transform: scale(0.98);
-  opacity: 0.8;
+  .footer__details h2:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
 }
 
 .footer__nav-wrap {
@@ -240,11 +242,16 @@ h2.opened-tab {
 
 .footer__contacts-list a {
   @include reset-style-link;
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   line-height: 1rem;
   padding: 2px 0;
   margin-bottom: 6px;
-  width: 100%;
+  width: auto;
+}
+
+.footer__contacts-tels {
+  @include reset-list-slyle;
 }
 
 .footer__contacts-list a:hover {

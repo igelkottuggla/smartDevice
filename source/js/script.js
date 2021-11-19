@@ -75,25 +75,54 @@
 (function () {
   const footerEl = document.querySelector('.footer');
   const footerBtns = document.querySelectorAll('.footer__details h2');
+  const mediaQuery = 768;
+
+  if (window.innerWidth < mediaQuery) {
+    footerBtns.forEach((button) => {
+      button.removeAttribute('tabindex');
+    });
+  }
+
+  const handleWindowChange = () => {
+    if (window.innerWidth >= mediaQuery) {
+      footerBtns.forEach((button) => {
+        button.removeAttribute('tabindex');
+      });
+    } else {
+      footerBtns.forEach((button) => {
+        button.setAttribute('tabindex', 0);
+      });
+    }
+  };
+
+  window.addEventListener(`resize`, () => handleWindowChange());
+
   if (footerEl) {
     footerEl.classList.remove('footer--no-js');
 
     if (footerBtns) {
-      footerBtns.forEach((button) => {
-        button.addEventListener('click', function (evt) {
-          for (let i = 0; i < footerBtns.length; i++) {
-            if (footerBtns[i] === evt.target) {
-              footerBtns[i].nextElementSibling.classList.toggle('opened');
-            }
+      if (window.innerWidth < mediaQuery) {
+        footerBtns.forEach((button) => {
+          button.setAttribute('tabindex', 0);
+          button.addEventListener('click', function (evt) {
+            for (let i = 0; i < footerBtns.length; i++) {
+              if (footerBtns[i] === evt.target) {
+                footerBtns[i].nextElementSibling.classList.toggle('opened');
+              }
 
-            if (footerBtns[i] !== evt.target) {
-              footerBtns[i].nextElementSibling.classList.remove('opened');
-              footerBtns[i].classList.remove('opened-tab');
+              if (footerBtns[i] !== evt.target) {
+                footerBtns[i].nextElementSibling.classList.remove('opened');
+                footerBtns[i].classList.remove('opened-tab');
+              }
             }
-          }
-          button.classList.toggle('opened-tab');
+            button.classList.toggle('opened-tab');
+          });
         });
-      });
+      } else {
+        footerBtns.forEach((button) => {
+          button.removeAttribute('tabindex');
+        });
+      }
     }
   }
 })();
