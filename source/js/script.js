@@ -102,7 +102,6 @@
 
     if (footerBtns) {
       footerBtns.forEach((button) => {
-        button.setAttribute('tabindex', 0);
         button.addEventListener('click', function (evt) {
           for (let i = 0; i < footerBtns.length; i++) {
             if (footerBtns[i] === evt.target) {
